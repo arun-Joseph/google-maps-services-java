@@ -182,6 +182,16 @@ public class PlaceAutocompleteRequest
   }
 
   /**
+   * Restricts the results to places matching the specified types.
+   *
+   * @param types The list of types to restrict results to.
+   * @return Returns this {@code PlaceAutocompleteRequest} for call chaining.
+   */
+  public PlaceAutocompleteRequest types(String... types) {
+    return param("types", join('|', types));
+  }
+
+  /**
    * A grouping of places to which you would like to restrict your results. Currently, you can use
    * components to filter by country.
    *
